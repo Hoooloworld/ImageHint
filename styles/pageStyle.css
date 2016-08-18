@@ -1,0 +1,149 @@
+body {
+  background-color: #358484;
+}
+
+body, div, hr, ul, li, a, img, figure, figcaption, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background-color: #2C323C;
+  width: 80%;
+  height: 454px;
+  margin: 100px auto;
+  padding: 30px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+hr {
+  border: 3px solid #fff;
+}
+
+#menu {
+  float: left;
+  margin: 80px 30px;
+  width: 17%;
+}
+
+#menu li {
+  list-style-type: none;
+  margin-top: 15px;
+  color: #fff;
+  font-family: "微软雅黑";
+  font-weight: bold;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+#menu li:first-child {
+  margin-top: 0px;
+}
+#menu li:hover {
+  background-color: #358484;
+}
+
+figure {
+  float: right;
+  width: 60%;
+  height: 80%;
+  margin: 40px;
+  border: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+figure img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  display: block;
+}
+
+/* ------ 初始状态 ------*/
+figure figcaption {
+  position: absolute;
+  color: #fff;
+  top: 100%;
+  left: 10%;
+  opacity: 0.0;
+}
+
+figure figcaption h2 {font-family: "微软雅黑"}
+figure figcaption p {text-indent: 2em;}
+
+figure div {
+  border: 3px solid #fff;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  opacity: 0.0;
+}
+
+/* ------ 初始状态 ------*/
+
+figure:hover img {
+  width: 110%;
+  height: 110%;
+  opacity: 0.5;
+}
+
+figure:hover figcaption {
+  opacity: 1;
+}
+
+figure, img, div, figcaption, h2, p { transition: all 0.8s;}
+
+/* 平移动画 */
+.tranDynamic figcaption { top: 100%;}
+.tranDynamic:hover figcaption { top: 70%;}
+
+/* 旋转动画 */
+.rotateDynamic figcaption { top: 70%; }
+.rotateDynamic div {
+  top: 100%;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: rotate(0deg);
+}
+.rotateDynamic:hover div {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotate(180deg);
+  opacity: 1;
+}
+.rotateDynamic:hover h2 { margin-left: 20px;}
+.rotateDynamic:hover p {margin-left: 60px;}
+
+/* 缩放动画 */
+.scaleDynamic figcaption { top: 70%;}
+.scaleDynamic div {
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.scaleDynamic:hover div {
+  width: 80%;
+  height: 80%;
+  opacity: 1;
+}
+.scaleDynamic:hover h2 { margin-left: 20px;}
+.scaleDynamic:hover p {margin-left: 60px;}
+
+/* 斜切动画 */
+.skewDynamic figcaption { top: 70%;}
+.skewDynamic figcaption h2 {transform: skewX(90deg);}
+.skewDynamic figcaption p {transform: skewX(90deg); transition-delay: 0.1s;}
+.skewDynamic:hover figcaption h2,
+.skewDynamic:hover figcaption p {
+  transform: skewX(0deg);
+}
